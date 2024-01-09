@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class F1DriversWikiApplication {
+public class DriversWikiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(F1DriversWikiApplication.class, args);
+		SpringApplication.run(DriversWikiApplication.class, args);
 	}
 
 }
