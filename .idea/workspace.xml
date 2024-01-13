@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7983ed7d-be46-4741-9101-7e92fdce1ba5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/DriverDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/DriverDTO.java" afterDir="false" />
+    <list default="true" id="acf10310-6dfb-49f3-94f0-21884e298475" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MPR.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/DriverDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/DriversWikiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/MyRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/java/com/example/F1/Drivers/Wiki/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F1-Drivers-Wiki/src/test/java/com/example/F1/Drivers/Wiki/F1DriversWikiApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +29,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2aiaiUzqTVBEHWN1IHpOhxsY99n" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2auL6Py3jMB59hSMjDuO7SOP0u6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,39 +42,30 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/MPR",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "C:/Users/wikto/Desktop/Drivers-Wiki",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gant",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7983ed7d-be46-4741-9101-7e92fdce1ba5" name="Changes" comment="" />
-      <created>1704803980879</created>
+      <changelist id="acf10310-6dfb-49f3-94f0-21884e298475" name="Changes" comment="" />
+      <created>1705163342716</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1704803980879</updated>
-      <workItem from="1704803981950" duration="57000" />
-      <workItem from="1704807856243" duration="55000" />
-      <workItem from="1704808003657" duration="331000" />
-      <workItem from="1704808352387" duration="39000" />
+      <updated>1705163342716</updated>
+      <workItem from="1705163343840" duration="35000" />
     </task>
     <servers />
   </component>

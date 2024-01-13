@@ -1,13 +1,13 @@
-package com.example.F1.Drivers.Wiki;
+package com.Drivers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DriversWikiApplication {
+public class DriversApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DriversWikiApplication.class, args);
+		SpringApplication.run(DriversApplication.class, args);
 	}
 
 }
