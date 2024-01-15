@@ -25,6 +25,7 @@ public class DriverDTO {
         this.racingSeries=racingSeries;
     }
 
+
     protected DriverDTO() {
 
     }

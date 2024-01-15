@@ -32,6 +32,14 @@ public class MyRestService {
     public List<DriverDTO> getAllDrivers() {
         return (List<DriverDTO>) driverRepository.findAll();
     }
+    public DriverDTO getDriverByName(String name) {
+        DriverDTO getDriver = this.driverRepository.findByName(name);
+        if (getDriver == null) {
+            throw new NoSuchElementException("Driver not found: " + name);
+        } else {
+            return this.driverRepository.findByName(name);
+        }
+    }
     public DriverDTO getDriverById(Long id) {
         Optional<DriverDTO> optionalDriver = this.driverRepository.findById(id);
         if (optionalDriver.isPresent()) {
@@ -41,20 +49,29 @@ public class MyRestService {
             throw new NoSuchElementException("Driver not found with id : " + id);
         }
     }
+
     public DriverDTO addDriver(DriverDTO driverDTO) {
-        return this.driverRepository.save(driverDTO);
-    }
-
-    public void deleteDriver(DriverDTO driverDTO) {
-        this.driverRepository.delete(driverDTO);
-    }
-
-    public DriverDTO getDriverByName(String name) {
-        DriverDTO getDriver = this.driverRepository.findByName(name);
-        if (getDriver == null) {
-            throw new NoSuchElementException("Driver not found: " + name);
-        } else {
-            return this.driverRepository.findByName(name);
+        DriverDTO existingDriver = this.driverRepository.findByName(driverDTO.getName());
+        if (existingDriver != null) {
+            throw new IllegalArgumentException("Driver with name " + driverDTO.getName() + " already exists");
         }
+        else {
+            return this.driverRepository.save(driverDTO);
+        }
+    }
+    public void updateDriver(Long id, String name, LocalDate dateOfBirth, String team, String racingSeries) {
+        Optional<DriverDTO> driver = driverRepository.findById(id);
+        if (driver.isPresent()) {
+            DriverDTO existingDriver = driverRepository.findById(id).orElseThrow();
+            existingDriver.setName(name);
+            existingDriver.setDateOfBirth(dateOfBirth);
+            existingDriver.setTeam(team);
+            existingDriver.setRacingSeries(racingSeries);
+        } else {
+            throw new NoSuchElementException("Driver not found with id : " + id);
+        }
+    }
+    public void deleteDriver(Long id) {
+        driverRepository.delete(getDriverById(id));
     }
 }

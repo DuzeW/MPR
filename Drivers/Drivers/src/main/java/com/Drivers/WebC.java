@@ -3,6 +3,7 @@ package com.Drivers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,10 @@ public class WebC {
     }
     @DeleteMapping("/deleteDriver")
     public void deleteDriver(@RequestParam Long id) {
-        this.myRestService.deleteDriver(myRestService.getDriverById(id));
+        this.myRestService.deleteDriver(id);
+    }
+    @PutMapping("/updateDriver")
+    public void updateDriver(@RequestParam Long id, @RequestParam String name, @RequestParam LocalDate dateOfBirth, @RequestParam String team, @RequestParam String racingSeries) {
+        this.myRestService.updateDriver(id, name, dateOfBirth, team, racingSeries);
     }
 }
