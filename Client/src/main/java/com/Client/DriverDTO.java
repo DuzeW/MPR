@@ -1,15 +1,8 @@
-package com.Drivers;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+package com.Client;
 
 import java.time.LocalDate;
 
-@Entity
 public class DriverDTO {
-    @Id
-    @GeneratedValue
     private Long id;
     String name;
     LocalDate dateOfBirth;

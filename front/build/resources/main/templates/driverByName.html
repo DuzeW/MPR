@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Drivers</title>
+</head>
+<body>
+<h1>Search by name</h1>
+<table>
+    <thead>
+    <th>id</th>
+    <th>name</th>
+    <th>dateOfBirth</th>
+    <th>team</th>
+    <th>racingSeries</th>
+    </thead>
+    <tbody>
+    <tr th:each="driver : ${NamedDrivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.name}"></td>
+        <td th:text="${driver.dateOfBirth}"></td>
+        <td th:text="${driver.team}"></td>
+        <td th:text="${driver.racingSeries}"></td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>

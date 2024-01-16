@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.RestServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-24T11:34:22" hostname="Testowys-MacBook-Pro.local" time="1.224">
+  <properties/>
+  <testcase name="findFinds()" classname="com.example.demo.RestServiceTest" time="1.224"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

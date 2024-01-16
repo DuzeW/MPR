@@ -51,13 +51,7 @@ public class MyRestService {
     }
 
     public DriverDTO addDriver(DriverDTO driverDTO) {
-        DriverDTO existingDriver = this.driverRepository.findByName(driverDTO.getName());
-        if (existingDriver != null) {
-            throw new IllegalArgumentException("Driver with name " + driverDTO.getName() + " already exists");
-        }
-        else {
             return this.driverRepository.save(driverDTO);
-        }
     }
     public void updateDriver(Long id, String name, LocalDate dateOfBirth, String team, String racingSeries) {
         Optional<DriverDTO> driver = driverRepository.findById(id);
