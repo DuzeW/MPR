@@ -61,6 +61,7 @@ public class MyRestService {
             existingDriver.setDateOfBirth(dateOfBirth);
             existingDriver.setTeam(team);
             existingDriver.setRacingSeries(racingSeries);
+            driverRepository.save(existingDriver);
         } else {
             throw new NoSuchElementException("Driver not found with id : " + id);
         }

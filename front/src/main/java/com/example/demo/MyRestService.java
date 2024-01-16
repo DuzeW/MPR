@@ -78,6 +78,7 @@ public class MyRestService {
     }
     @PutMapping("/updateDriver")
     public void updateDriver(@RequestParam Long id, @RequestParam String name, @RequestParam String dateOfBirth, @RequestParam String team, @RequestParam String racingSeries) {
+        //^ RequestBody
         String targetUrl = UriComponentsBuilder.fromHttpUrl(API_URL + "/updateDriver")
                 .queryParam("id", id)
                 .queryParam("name", name)

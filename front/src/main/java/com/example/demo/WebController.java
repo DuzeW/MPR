@@ -35,17 +35,17 @@ public class WebController {
         model.addAttribute("AddedDriver", driver);
         return "addDriver";
     }
-    @DeleteMapping("/deleteDriverFrom")
+    @PostMapping("/deleteDriver")
     public String deleteDriver(@RequestParam Long id, Model model) {
         myRestService.deleteDriver(id);
         model.addAttribute("DeletedDriverId", id);
         return "deleteDriver";
     }
-    @PutMapping("/updateDriverForm")
+    @PostMapping("/updateDriver")
     public String updateDriver(@RequestParam Long id, @RequestParam String name, @RequestParam String dateOfBirth, @RequestParam String team, @RequestParam String racingSeries, Model model) {
         myRestService.updateDriver(id, name, dateOfBirth, team, racingSeries);
         model.addAttribute("UpdatedDriverId", id);
-        return "updateDriver";
+        return "updateDriver"; //redirect to drivers
     }
 
 
