@@ -4,7 +4,7 @@
     <title>Drivers</title>
 </head>
 <body>
-<h1>All Drivers</h1>
+<h1>Search by Id</h1>
 <table>
     <thead>
     <th>id</th>
@@ -14,14 +14,13 @@
     <th>racingSeries</th>
     </thead>
     <tbody>
-    <tr th:each="driver : ${drivers}">
+    <tr th:each="driver : ${IdDriver}">
         <td th:text="${driver.id}"></td>
         <td th:text="${driver.name}"></td>
         <td th:text="${driver.dateOfBirth}"></td>
         <td th:text="${driver.team}"></td>
         <td th:text="${driver.racingSeries}"></td>
     </tr>
-
     </tbody>
 </table>
 </body>

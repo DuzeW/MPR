@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Driver</title>
+</head>
+<body>
+<h1>Update Driver</h1>
+
+<form action="#" th:action="@{/updateDriverForm}" method="post">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td><input type="number" th:name="id" required /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:name="name" /></td>
+        </tr>
+        <tr>
+            <td>Date of Birth:</td>
+            <td><input type="text" th:name="dateOfBirth" /></td>
+        </tr>
+        <tr>
+            <td>Team:</td>
+            <td><input type="text" th:name="team" /></td>
+        </tr>
+        <tr>
+            <td>Racing Series:</td>
+            <td><input type="text" th:name="racingSeries" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Update Driver</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

@@ -51,7 +51,7 @@ public class MyRestService {
         return driverByName;
     }
     @GetMapping("/getDriverById")
-    public DriverDTO getDriverByName(@RequestParam Long id) {
+    public DriverDTO getDriverById(@RequestParam Long id) {
         DriverDTO driverByid = restClient
                 .get()
                 .uri(URI.create(

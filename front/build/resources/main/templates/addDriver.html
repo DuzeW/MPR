@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Driver Details</title>
+</head>
+<body>
+<table>
+    <thead>
+    <th>id</th>
+    <th>name</th>
+    <th>dateOfBirth</th>
+    <th>team</th>
+    <th>racingSeries</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${AddedDriver.id}"></td>
+        <td th:text="${AddedDriver.name}"></td>
+        <td th:text="${AddedDriver.dateOfBirth}"></td>
+        <td th:text="${AddedDriver.team}"></td>
+        <td th:text="${AddedDriver.racingSeries}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
