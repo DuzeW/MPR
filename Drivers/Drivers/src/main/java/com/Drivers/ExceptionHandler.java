@@ -13,8 +13,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(NoSuchElementException.class)
 
     protected ResponseEntity<Object> handleNotFound(RuntimeException ex, WebRequest request){
-        //return ResponseEntity.notFound().build();
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return ResponseEntity.notFound().build();
     }
 
 }
