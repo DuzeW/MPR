@@ -13,14 +13,15 @@
     <th>racingSeries</th>
     </thead>
     <tbody>
-    <tr>
-        <td th:text="${AddedDriver.id}"></td>
-        <td th:text="${AddedDriver.name}"></td>
-        <td th:text="${AddedDriver.dateOfBirth}"></td>
-        <td th:text="${AddedDriver.team}"></td>
-        <td th:text="${AddedDriver.racingSeries}"></td>
+    <tr th:each="addDriver : ${drivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.name}"></td>
+        <td th:text="${driver.dateOfBirth}"></td>
+        <td th:text="${driver.team}"></td>
+        <td th:text="${driver.racingSeries}"></td>
     </tr>
     </tbody>
+    <a href="http://localhost:8081/drivers" class="btn">Go to Drivers Page</a>
 </table>
 </body>
 </html>
