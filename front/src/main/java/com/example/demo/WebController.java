@@ -45,7 +45,7 @@ public class WebController {
     public String updateDriver(@RequestParam Long id, @RequestParam String name, @RequestParam String dateOfBirth, @RequestParam String team, @RequestParam String racingSeries, Model model) {
         myRestService.updateDriver(id, name, dateOfBirth, team, racingSeries);
         model.addAttribute("UpdatedDriverId", id);
-        return "updateDriver"; //redirect to drivers
+        return "updateDriver";
     }
 
 

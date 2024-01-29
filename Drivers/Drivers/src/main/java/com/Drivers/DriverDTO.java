@@ -1,8 +1,6 @@
 package com.Drivers;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -10,11 +8,16 @@ import java.time.LocalDate;
 public class DriverDTO {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
     String name;
     LocalDate dateOfBirth;
     String team;
     String racingSeries;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
+    private CarDTO carDTO;
 
     public DriverDTO(String name, LocalDate dateOfBirth, String team, String racingSeries) {
         this.dateOfBirth=dateOfBirth;
