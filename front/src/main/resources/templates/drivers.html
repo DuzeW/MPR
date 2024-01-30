@@ -20,6 +20,7 @@
         <td th:text="${driver.dateOfBirth}"></td>
         <td th:text="${driver.team}"></td>
         <td th:text="${driver.racingSeries}"></td>
+        <td><a th:href="@{/driverCar(id=${driver.id})}">Open DriverCar</a></td>
     </tr>
     </tbody>
 </table>

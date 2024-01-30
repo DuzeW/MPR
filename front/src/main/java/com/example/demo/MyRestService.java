@@ -16,13 +16,15 @@ public class MyRestService {
 
     public MyRestService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-    };
+    }
+
+    ;
     RestClient restClient;
 
     public MyRestService() {
         restClient = RestClient.create();
     }
-    
+
 
     @GetMapping("/getAllDrivers")
     public List<DriverDTO> getAllDrivers() {
@@ -34,6 +36,7 @@ public class MyRestService {
                 });
         return allDrivers;
     }
+
     @GetMapping("/getDriverByName")
     public DriverDTO getDriverByName(@RequestParam String name) {
         DriverDTO driverByName = restClient
@@ -47,6 +50,7 @@ public class MyRestService {
                 });
         return driverByName;
     }
+
     @GetMapping("/getDriverById")
     public DriverDTO getDriverById(@RequestParam Long id) {
         DriverDTO driverByid = restClient
@@ -60,6 +64,7 @@ public class MyRestService {
                 });
         return driverByid;
     }
+
     @PostMapping("/addDriver")
     public DriverDTO addDriver(@RequestParam String name, @RequestParam String dateOfBirth, @RequestParam String team, @RequestParam String racingSeries) {
         String targetUrl = UriComponentsBuilder.fromHttpUrl(API_URL + "/addDriver")
@@ -73,9 +78,9 @@ public class MyRestService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject(targetUrl, null, DriverDTO.class);
     }
+
     @PutMapping("/updateDriver")
     public void updateDriver(@RequestParam Long id, @RequestParam String name, @RequestParam String dateOfBirth, @RequestParam String team, @RequestParam String racingSeries) {
-        //^ RequestBody
         String targetUrl = UriComponentsBuilder.fromHttpUrl(API_URL + "/updateDriver")
                 .queryParam("id", id)
                 .queryParam("name", name)
@@ -87,6 +92,7 @@ public class MyRestService {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.put(targetUrl, null, DriverDTO.class);
     }
+
     @DeleteMapping("/deleteDriver")
     public void deleteDriver(@RequestParam Long id) {
         String targetUrl = UriComponentsBuilder.fromHttpUrl(API_URL + "/deleteDriver")
@@ -96,4 +102,20 @@ public class MyRestService {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete(targetUrl);
     }
+
+    @GetMapping("/getDriverCar")
+    public CarDTO getDriverCar(@RequestParam Long id) {
+        CarDTO driverCar = restClient
+                .get()
+                .uri(URI.create(
+                        UriComponentsBuilder.fromHttpUrl(API_URL + "/getDriverCar")
+                                .queryParam("id", id)
+                                .toUriString()))
+                .retrieve()
+                .body(new ParameterizedTypeReference<CarDTO>() {
+                });
+        return driverCar;
+    }
+
+
 }

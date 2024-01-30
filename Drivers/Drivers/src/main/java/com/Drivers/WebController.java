@@ -40,6 +40,13 @@ public class WebController {
     public void deleteDriver(@RequestParam Long id) {
         this.myRestService.deleteDriver(id);
     }
-
+    @GetMapping("/getDriverCar")
+    public CarDTO getDriverCar(@RequestParam Long id) {
+        return this.myRestService.getDriverCar(id);
+    }
+    @GetMapping("/getCar")
+    public CarDTO getCar(@RequestParam Long id){
+        return this.myRestService.getCar(id);
+    }
 
 }

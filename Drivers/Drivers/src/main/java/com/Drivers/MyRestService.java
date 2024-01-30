@@ -78,6 +78,19 @@ public class MyRestService {
         driverRepository.delete(getDriverById(id));
     }
 
+    public CarDTO getCar (Long id){
+        return carRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Car not found with id : " + id));
+    }
 
+    public CarDTO getDriverCar (Long id){
+        Optional<DriverDTO> optionalDriver = this.driverRepository.findById(id);
+        if (optionalDriver.isPresent()) {
+            DriverDTO driver = optionalDriver.get();
+            Long cid = driver.getCId();
+            return carRepository.findById(cid).orElseThrow(() -> new NoSuchElementException("Car not found with id : " + cid));
+        } else {
+            throw new NoSuchElementException("Driver not found with id : " + id);
+        }
+    }
 
 }

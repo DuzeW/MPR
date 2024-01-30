@@ -46,6 +46,12 @@ public class WebController {
         model.addAttribute("UpdatedDriverId", id);
         return "updateDriver";
     }
+    @GetMapping("/driverCar")
+    public String getDriverCar(@RequestParam Long id, Model model) {
+        model.addAttribute("DriverCar", myRestService.getDriverCar(id));
+        return "driverCar";
+    }
+
 
 
 }

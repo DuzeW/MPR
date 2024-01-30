@@ -1,16 +1,12 @@
-package com.Drivers;
+package com.example.demo;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "car")
+
 public class CarDTO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+
     private Long id;
 
-    @OneToOne(mappedBy = "carDTO")
+
     private DriverDTO driverDTO;
 
     private String name;
