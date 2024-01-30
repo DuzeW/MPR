@@ -3,21 +3,46 @@ package com.Drivers;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
+@Table(name = "driver")
 public class DriverDTO {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    String name;
-    LocalDate dateOfBirth;
-    String team;
-    String racingSeries;
+    private String name;
+    private LocalDate dateOfBirth;
+    private String team;
+    private String racingSeries;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     private CarDTO carDTO;
+
+    public CarDTO getCarDTO() {
+        return carDTO;
+    }
+
+    public void setCarDTO(CarDTO carDTO) {
+        this.carDTO = carDTO;
+    }
+
+    @OneToMany(mappedBy = "driver")
+    private List<AchievementDTO> achievements;
+
+    public List<AchievementDTO> getAchievements() {
+        return achievements;
+    }
+
+    public void setAchievements(List<AchievementDTO> achievements) {
+        this.achievements = achievements;
+    }
+
+
+
+
 
     public DriverDTO(String name, LocalDate dateOfBirth, String team, String racingSeries) {
         this.dateOfBirth=dateOfBirth;
@@ -69,5 +94,23 @@ public class DriverDTO {
 
     public void setRacingSeries(String team) {
         this.racingSeries = team;
+    }
+
+
+    private Long cId;
+    private Long achievementId;
+    public Long getCId() {
+        return cId;
+    }
+    public void setCarId(Long cId) {
+        this.cId = cId;
+    }
+
+    public DriverDTO(String name, LocalDate dateOfBirth, String team, String racingSeries, Long cId) {
+        this.dateOfBirth=dateOfBirth;
+        this.name=name;
+        this.team=team;
+        this.racingSeries=racingSeries;
+        this.cId = cId;
     }
 }

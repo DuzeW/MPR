@@ -6,16 +6,23 @@ import jakarta.persistence.*;
 @Table(name = "car")
 public class CarDTO {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(mappedBy = "car")
+    @OneToOne(mappedBy = "carDTO")
     private DriverDTO driverDTO;
 
-    String name;
-    Long hp;
-    Long wight;
+    private String name;
+    private Long hp;
+    private Long weight;
+
+    public CarDTO(String name, Long hp, Long weight){
+        this.name = name;
+        this.hp = hp;
+        this.weight = weight;
+    }
+    protected CarDTO(){}
 
     public Long getId() {
         return id;
@@ -49,13 +56,15 @@ public class CarDTO {
         this.hp = hp;
     }
 
-    public Long getWight() {
-        return wight;
+    public Long getWeight() {
+        return weight;
     }
 
-    public void setWight(Long wight) {
-        this.wight = wight;
+    public void setWeight(Long wight) {
+        this.weight = weight;
     }
+
+
 
 
 

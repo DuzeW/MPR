@@ -11,7 +11,6 @@ public class WebController {
     @Autowired
     public WebController(MyRestService carService) {
         this.myRestService = carService;
-
     }
     @GetMapping("/drivers")
     public String all(Model model)

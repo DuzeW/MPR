@@ -14,9 +14,14 @@ public class MyRestService {
     @Autowired
     DriverRepository driverRepository;
 
-    public MyRestService(DriverRepository driverRepository) {
+    CarRepository carRepository;
+
+
+    public MyRestService(DriverRepository driverRepository, CarRepository carRepository) {
         this.driverRepository = driverRepository;
-        this.driverRepository.save(new DriverDTO("Max Verstappen", LocalDate.parse("1997-09-30"), "Red Bull Racing", "Formula 1"));
+        this.carRepository=carRepository;
+        this.carRepository.save(new CarDTO("RB18",740L,798L));
+        this.driverRepository.save(new DriverDTO("Max Verstappen", LocalDate.parse("1997-09-30"), "Red Bull Racing", "Formula 1",1L));
         this.driverRepository.save(new DriverDTO("Sergio Perez", LocalDate.parse("1990-01-26"), "Red Bull Racing", "Formula 1"));
         this.driverRepository.save(new DriverDTO("Lewis Hamilton", LocalDate.parse("1985-01-07"), "Mercedes", "Formula 1"));
         this.driverRepository.save(new DriverDTO("George Russell", LocalDate.parse("1998-02-15"), "Mercedes", "Formula 1"));
@@ -27,7 +32,10 @@ public class MyRestService {
         this.driverRepository.save(new DriverDTO("Kalle Rovanperä", LocalDate.parse("2000-10-01"), "TOYOTA GAZOO RACING WORLD RALLY TEAM", "WRC"));
         this.driverRepository.save(new DriverDTO("Elfyn Evans", LocalDate.parse("1988-12-28"), "TOYOTA GAZOO RACING WORLD RALLY TEAM", "WRC"));
         this.driverRepository.save(new DriverDTO("Thierry Neuville", LocalDate.parse("1988-06-16"), "HYUNDAI SHELL MOBIS WORLD RALLY TEAM", "WRC"));
+
+
     }
+
 
     public List<DriverDTO> getAllDrivers() {
         return (List<DriverDTO>) driverRepository.findAll();
@@ -69,4 +77,7 @@ public class MyRestService {
     public void deleteDriver(Long id) {
         driverRepository.delete(getDriverById(id));
     }
+
+
+
 }
