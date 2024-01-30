@@ -103,7 +103,6 @@ public class DriverDTO {
 
 
     private Long cId;
-    private Long achievementId;
     public Long getCId() {
         return cId;
     }

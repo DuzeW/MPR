@@ -23,13 +23,22 @@ public class MyRestService {
         this.driverRepository = driverRepository;
         this.carRepository=carRepository;
         this.achievementRepository=achievementRepository;
-        this.driverRepository.save(new DriverDTO("Valtteri Bottas", LocalDate.parse("1989-08-28"), "Alfa-Romeo", "Formula 1"));
         this.carRepository.save(new CarDTO("RB18",740L,798L));
         DriverDTO driver = new DriverDTO("Max Verstappen", LocalDate.parse("1997-09-30"), "Red Bull Racing", "Formula 1",1L);
         this.driverRepository.save(driver);
         AchievementDTO achievement = new AchievementDTO(1L,"World Champion 2023");
+        AchievementDTO achievement2 = new AchievementDTO(1L,"World Champion 2022");
         achievement.setDriver(driver);
+        achievement2.setDriver(driver);
         this.achievementRepository.save(achievement);
+        this.achievementRepository.save(achievement2);
+
+
+        DriverDTO driver2 = new DriverDTO("Sergio Perez", LocalDate.parse("1990-01-26"), "Red Bull Racing", "Formula 1",1L);
+        this.driverRepository.save(driver2);
+        AchievementDTO achievement3 = new AchievementDTO(2L,"Second Championship 2023");
+        achievement3.setDriver(driver2);
+        this.achievementRepository.save(achievement3);
 
         this.driverRepository.save(new DriverDTO("Sergio Perez", LocalDate.parse("1990-01-26"), "Red Bull Racing", "Formula 1"));
         this.driverRepository.save(new DriverDTO("Lewis Hamilton", LocalDate.parse("1985-01-07"), "Mercedes", "Formula 1"));
