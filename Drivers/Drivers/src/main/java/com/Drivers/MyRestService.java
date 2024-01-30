@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -15,13 +16,20 @@ public class MyRestService {
     DriverRepository driverRepository;
 
     CarRepository carRepository;
+    AchievementRepository achievementRepository;
 
 
-    public MyRestService(DriverRepository driverRepository, CarRepository carRepository) {
+    public MyRestService(DriverRepository driverRepository, CarRepository carRepository,AchievementRepository achievementRepository) {
         this.driverRepository = driverRepository;
         this.carRepository=carRepository;
+        this.achievementRepository=achievementRepository;
         this.carRepository.save(new CarDTO("RB18",740L,798L));
-        this.driverRepository.save(new DriverDTO("Max Verstappen", LocalDate.parse("1997-09-30"), "Red Bull Racing", "Formula 1",1L));
+        DriverDTO driver = new DriverDTO("Max Verstappen", LocalDate.parse("1997-09-30"), "Red Bull Racing", "Formula 1",1L);
+        this.driverRepository.save(driver);
+
+        AchievementDTO achievement = new AchievementDTO(1L,"World Champion 2023");
+        achievement.setDriver(driver);
+        this.achievementRepository.save(achievement);
         this.driverRepository.save(new DriverDTO("Sergio Perez", LocalDate.parse("1990-01-26"), "Red Bull Racing", "Formula 1"));
         this.driverRepository.save(new DriverDTO("Lewis Hamilton", LocalDate.parse("1985-01-07"), "Mercedes", "Formula 1"));
         this.driverRepository.save(new DriverDTO("George Russell", LocalDate.parse("1998-02-15"), "Mercedes", "Formula 1"));
@@ -91,6 +99,15 @@ public class MyRestService {
         } else {
             throw new NoSuchElementException("Driver not found with id : " + id);
         }
+    }
+    public List<String> getDriverAchievements(Long id) {
+        List<AchievementDTO> achievements = (List<AchievementDTO>) achievementRepository.findAll();
+
+        List<String> filterAchievements = achievements.stream()
+                .filter(achievement -> achievement.getDriverId().equals(id))
+                .map(AchievementDTO::getName)
+                .collect(Collectors.toList());
+        return filterAchievements;
     }
 
 }

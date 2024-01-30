@@ -116,6 +116,18 @@ public class MyRestService {
                 });
         return driverCar;
     }
+    @GetMapping("/getDriverAchievements")
+    public List<String> getDriverAchievements(@RequestParam Long id) {
+        List<String> driverAchievements = restClient
+                .get()
+                .uri(URI.create(
+                        UriComponentsBuilder.fromHttpUrl(API_URL + "/getDriverAchievements")
+                                .queryParam("id", id)
+                                .toUriString()))
+                .retrieve()
+                .body(new ParameterizedTypeReference<List<String>>() {});
+        return driverAchievements;
+    }
 
 
 }

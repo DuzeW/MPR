@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Driver Achievements</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Driver Achievements</h1>
+
+<ul>
+    <li th:each="achievement : ${DriverAchievements}" th:text="${achievement}"></li>
+</ul>
+
+</body>
+</html>

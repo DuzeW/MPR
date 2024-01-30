@@ -48,5 +48,10 @@ public class WebController {
     public CarDTO getCar(@RequestParam Long id){
         return this.myRestService.getCar(id);
     }
+    @GetMapping("/getDriverAchievements")
+    public List<String> getDriverAchievements(@RequestParam Long id) {
+        return this.myRestService.getDriverAchievements(id);
+    }
+
 
 }

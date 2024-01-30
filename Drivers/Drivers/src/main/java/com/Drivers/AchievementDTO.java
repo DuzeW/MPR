@@ -42,7 +42,11 @@ public class AchievementDTO {
     public AchievementDTO (String name){
         this.name = name;
     }
-    protected AchievementDTO(){}
+    public AchievementDTO (Long id,String name){
+        this.name = name;
+        this.dId=id;
+    }
+    public AchievementDTO(){}
 
 
 
@@ -54,13 +58,13 @@ public class AchievementDTO {
 
 
     public Long getDriverId() {
-        return DId;
+        return dId;
     }
 
     public void setDriverId(Long dId) {
-        DId = dId;
+        dId = dId;
     }
 
-    public Long DId;
+    public Long dId;
 
 }

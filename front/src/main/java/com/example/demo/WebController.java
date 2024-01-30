@@ -51,6 +51,11 @@ public class WebController {
         model.addAttribute("DriverCar", myRestService.getDriverCar(id));
         return "driverCar";
     }
+    @GetMapping("/driverAchievements")
+    public String getDriverAchievements(@RequestParam Long id, Model model) {
+        model.addAttribute("DriverAchievements", myRestService.getDriverAchievements(id));
+        return "driverAchievements";
+    }
 
 
 
